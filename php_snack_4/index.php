@@ -12,7 +12,7 @@
         // creo array inizialmente vuoto
         $myArray = [];
 
-        // attraverso un ciclo creo 15 numeri casuali
+        // attraverso un ciclo creo 15 numeri casuali e li pusho nell'array
         for ($i = 0; count($myArray) < 15; $i++) {
             $newInteger = rand(1, 100);
             if (!in_array($newInteger, $myArray)) {
