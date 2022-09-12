@@ -9,14 +9,16 @@
 <body>
 
     <?php
-        $paragrafo = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus numquam laboriosam dolor, tempora velit molestias, ipsum eum aspernatur ex dolore perspiciatis dolores. Officia eligendi molestiae exercitationem at obcaecati possimus blanditiis quam neque. Sequi qui libero nemo aspernatur totam obcaecati eum ea expedita officia ullam rem ducimus, porro itaque fuga sint. Dolorem consequatur, deleniti laborum dolores facere soluta? Illo quas necessitatibus, iusto nostrum dolore aspernatur quaerat libero tenetur nesciunt quam voluptates blanditiis ea, vitae molestias! Perspiciatis, repudiandae quos deleniti, molestiae totam vero illum nihil voluptates dolores molestias cumque? Quibusdam sint, similique rerum totam dolor voluptates exercitationem aut rem perspiciatis nam adipisci.';
-        // separo il paragrafo ad ogni punto: explode() crea un array di stringhe.
-        $paragrafi_separati = explode('.', $paragrafo);
+        // passo come parametro get i tre dati
+        $myName = $_GET['name'];
+        $myEmail = $_GET['email'];
+        $myAge = $_GET['age'];
 
-        // echo var_dump($paragrafi_separati); => per debug: controllo se la variabile è un array di stringhe.
-        // ciclo l'array $paragrafi_separati e stampo ciascun paragrafo separato in un tag <p>.
-        for ($i = 0; $i < count($paragrafi_separati); $i++) {
-            echo "<p>" . $paragrafi_separati[$i] . "</p>";
+        // verifica
+        if (strlen($myName) > 3 && strpos($myEmail, '@') && strpos($myEmail, '.') && is_numeric($myAge)) {
+            echo 'Accesso riuscito.';
+        } else {
+            echo 'Accesso negato.';
         }
     ?>
 
