@@ -41,11 +41,17 @@
         ];
 
         // debug
-        var_dump($students);
+        // var_dump($students);
 
         // stampo le informazioni attraverso un ciclo
         for ($i = 0; $i < count($students); $i++) {
-            echo $students[$i]['name'] . ' - ' . $students[$i]['surname'] . ' - ' . array_sum($students[$i]['grades'])/count($students) . '<br>';
+            $name = $students[$i]['name'];
+            $surname = $students[$i]['surname'];
+            $averageGradeLong = array_sum($students[$i]['grades'])/count($students); // calcolo media
+            $averageGrade = number_format($averageGradeLong, 2, '.', ''); // accetto solo due cifre decimali della media
+            // vecchia sintassi:
+            // echo 'Nome: ' . $students[$i]['name'] . '<br>' . 'Cognome: ' . $students[$i]['surname'] . '<br>' . 'Media voti: ' . array_sum($students[$i]['grades'])/count($students) . '<br><br>';
+            echo 'Nome: ' . $name . '<br>' . 'Cognome: ' . $surname . '<br>' . 'Media voti: ' . $averageGrade . '<br><br>';
         }
     ?>
 
